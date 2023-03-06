@@ -1,0 +1,24 @@
+.strength-line {
+  width: 30%;
+  display: flex;
+  margin-top: 2px;
+
+  &__section {
+    content: '';
+    height: 4px;
+    width: calc(100% / 3);
+    background-color: gray;
+
+    &--red {
+      background-color: red;
+    }
+
+    &--yellow {
+      background-color: yellow;
+    }
+
+    &--green {
+      background-color: green;
+    }
+  }
+}
