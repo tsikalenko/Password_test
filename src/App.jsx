@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import classNames from 'classnames';
+import Input from './components/Input';
+import StrengthLine from './components/StrengthLine';
 
 import './App.scss';
 
@@ -10,6 +11,7 @@ function App() {
     const changePassword = (event) => {
         const newPassword = event.target.value;
         setPassword(newPassword);
+
         if (newPassword.length === 0) {
             setStrength(0);
         } else if (newPassword.length > 0 && newPassword.length < 8) {
@@ -33,36 +35,12 @@ function App() {
 
     return (
         <form className='form'>
-            <label className='form__label'>Enter password:</label>
-            <input
-                type='text'
-                className='form__password'
+            <Input
                 value={password}
                 onChange={changePassword}
+                label={'Enter password:'}
             />
-            <div className='form__strength strength'>
-                <div
-                    className={classNames('strength__section', {
-                        'strength__section--red':
-                            strength === 1 || strength === 2,
-                        'strength__section--yellow': strength === 3,
-                        'strength__section--green': strength === 4,
-                    })}
-                ></div>
-                <div
-                    className={classNames('strength__section', {
-                        'strength__section--red': strength === 1,
-                        'strength__section--yellow': strength === 3,
-                        'strength__section--green': strength === 4,
-                    })}
-                ></div>
-                <div
-                    className={classNames('strength__section', {
-                        'strength__section--red': strength === 1,
-                        'strength__section--green': strength === 4,
-                    })}
-                ></div>
-            </div>
+            <StrengthLine strength={strength} />
         </form>
     );
 }

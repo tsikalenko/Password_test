@@ -1,47 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
 .form {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-
-  &__password {
-    height: 25px;
-    width: 30%;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 0 5px;
-  }
-
-  &__strength {
-    margin-top: 5px;
-    display: flex;
-    width: 30%;
-  }
-}
-
-.strength {
-  &__section {
-    content: '';
-    height: 4px;
-    width: calc(100% / 3);
-    background-color: gray;
-
-    &--red {
-      background-color: red;
-    }
-
-    &--yellow {
-      background-color: yellow;
-    }
-
-    &--green {
-      background-color: green;
-    }
-  }
 }
